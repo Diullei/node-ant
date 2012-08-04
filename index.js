@@ -5,7 +5,6 @@
  * Released under the MIT license
  */
 
-
 exports.TMP_PATH = null;
 exports.ANT_PATH = './ant/bin/ant';
 
@@ -17,7 +16,6 @@ var _path = require('path');
 var _jxon = require('./lib/jxon');
 
 // ---
-
 
 function exec(tasks, args, callback) {
     // args is optional
@@ -66,15 +64,11 @@ function exec(tasks, args, callback) {
             });
         });
     });
-
 }
-
 
 var _prevUid = 0;
 function uid(){
     return String(Date.now()).substr(-7) +'-'+ (++_prevUid);
 }
 
-
 exports.exec = exec;
-
