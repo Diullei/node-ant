@@ -30,13 +30,3 @@ test("first argument 'obj' must have properties", function(){
 	"must throw error message: argument 'obj' must have properties");
 });
 
-test("can't have 'keyValue' and 'children' at the same time in parameter 'obj'.", function(){
-	raises(function() {
-		jxon.toXML({'keyValue': {}});
-	}, 
-	function(err) {
-		console.log('log: ' + err.message);
-		return err.message === "argument 'obj' must have properties";
-	},
-	"must throw error message: argument 'obj' must have properties");
-});
