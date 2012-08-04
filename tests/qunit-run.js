@@ -1,5 +1,5 @@
 ﻿//by: https://github.com/ElemarJR/QUnit-run
-//changed by Diullei https://github.com/Diullei/QUnit-run
+//changed by Diullei
 var qunit = require("./lib/qunit/qunit").QUnit,
 	fs = require("fs"),
 	exitcode = 0;
@@ -36,26 +36,26 @@ var stopWatch = {
 	qunit.init();
 
 	qunit.moduleStart = function (data) {
-		print_highlight(data.name);
+		print_highlight("module: " + data.name);
 	};
 
 	qunit.moduleDone = function (data) {
 		print("\n" +
-			data.failed + " failed. " + 
-			data.passed + " passed. " + 
-			data.total + " total."
+			"\33[31m\33[1m" + data.failed + "\33[0m failed. " + 
+			"\33[32m\33[1m" + data.passed +"\33[0m passed. " + 
+			"\33[1m" + data.total + "\33[0m total."
 			);
 	};
 
 	qunit.testStart = function (data) {
-		print("\n  " +  data.name);
+		print_highlight("\n  test: " +  data.name);
 	};
 
 	qunit.testDone = function (data) {
 		print("\n  " + 
-			data.failed + " failed. " + 
-			data.passed + " passed. " + 
-			data.total + " total."
+			"\33[31m\33[1m" + data.failed + "\33[0m failed. " + 
+			"\33[32m\33[1m" + data.passed +"\33[0m passed. " + 
+			"\33[1m" + data.total + "\33[0m total."
 			);
 	};
 
